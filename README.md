@@ -34,7 +34,7 @@ git clone https://github.com/Goater1095/basic-user-authentication.git
 2.初始
 
 ```
-cd URL_Shortener  //切至專案資料夾
+cd basic-user-authentication  //切至專案資料夾
 ```
 
 ```
