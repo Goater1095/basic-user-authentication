@@ -37,8 +37,20 @@ app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  console.log('start');
   res.render('register');
+});
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  users.forEach((user) => {
+    if (user.email === email) {
+      if (user.password === password) {
+        return res.render('index', { firstName: user.firstName });
+      }
+    }
+  });
+  const error = 'Username 或 Password 錯誤';
+  return res.render('register', { error });
 });
 
 app.listen(port, () =>

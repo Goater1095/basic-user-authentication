@@ -2,8 +2,17 @@
   <div class="col-md-6 m-auto">
     <div class="card card-body ">
       <h1 class="text-center my-2">Account Login</h1>
-      {{!-- {{> message}} --}}
-      <form action="/" method="POST" class='text-center"'>
+
+      {{#if error}}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{error}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {{/if}}
+
+      <form action="/login" method="POST" class='text-center"'>
         <div class="form-group mb-2 mx-4">
           <input type="email" id="email" name="email" class="form-control my-4 py-4" placeholder="Email">
 
